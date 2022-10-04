@@ -1,0 +1,38 @@
+[33m510fdd9[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/main[m[33m)[m first commit
+[33mc76c7e4[m Bump dependencies
+[33m6a5f9f3[m Merge pull request #26 from jpggvilaca/dependabot/npm_and_yarn/terser-4.8.1
+[33m1e585b4[m Bump terser from 4.8.0 to 4.8.1
+[33mc180457[m bump versions
+[33mb313c9a[m npm audit fix
+[33m49297f6[m Merge pull request #11 from jpggvilaca/dependabot/npm_and_yarn/y18n-4.0.3
+[33m20c7af0[m Bump y18n from 4.0.0 to 4.0.3
+[33m06d733b[m Merge pull request #10 from jpggvilaca/dependabot/npm_and_yarn/ini-1.3.8
+[33m4f6f122[m Update README
+[33md03fd17[m Bump ini from 1.3.5 to 1.3.8
+[33me4fcb74[m Update to webpack5
+[33m770ee3d[m Update dependencies
+[33mf945d14[m Merge pull request #5 from jpggvilaca/dependabot/npm_and_yarn/acorn-6.4.1
+[33mbec41f1[m Merge pull request #6 from jpggvilaca/dependabot/npm_and_yarn/websocket-extensions-0.1.4
+[33mf811026[m Bump websocket-extensions from 0.1.3 to 0.1.4
+[33m2c45fb9[m Update README; Update outdated packages
+[33m326a6b1[m Bump acorn from 6.3.0 to 6.4.1
+[33meeb2a58[m Merge pull request #4 from moisespio/master
+[33md8eedcd[m Merge branch 'master' into master
+[33me6c2c9a[m Add cross-env to avoid compatibility issues
+[33m61fab82[m Update dependencies
+[33m633cd6c[m Merge pull request #3 from moisespio/master
+[33m460d043[m Update script to use NODE_ENV
+[33m7e32aa8[m Fix build script to use cross-env
+[33md283482[m Fighting vulnerabilities
+[33m0162d1a[m Update dependencies; Add author; Update README
+[33m075d9e4[m Update to webpack 4; Update child dependencies
+[33mec76a4c[m Update webpack and extract-text-webpack-plugin
+[33m79e1316[m Update README.md
+[33m04204d7[m Update Readme; Update babel preset; Add repo to package.json
+[33me477da4[m Update UglifyJSPlugin for webpack 3
+[33meb71c4d[m Merge pull request #2 from taniarascia/master
+[33me255681[m Fix Babel issue
+[33ma705b8a[m Merge pull request #1 from taniarascia/master
+[33m939647d[m Clarify instructions
+[33mfc39d07[m Update Readme
+[33m6fb4f73[m First commit
