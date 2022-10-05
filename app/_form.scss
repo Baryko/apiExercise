@@ -1,4 +1,23 @@
 form {
     width: 600px;
-    background-color: yellow;
+    margin-bottom: 45px;
+
+    input.textInput {
+        width: 450px;
+        height: 33px;
+        border: 0px solid black;
+        -webkit-box-shadow: -1px 2px 8px -3px rgba(166, 171, 187, 1);
+        -moz-box-shadow: -1px 2px 8px -3px rgba(166, 171, 187, 1);
+        box-shadow: -1px 2px 8px -3px rgba(166, 171, 187, 1);
+    }
+
+    input.submitInput {
+        background-color: rgba(26, 26, 209, 0.849);
+        color: rgba(255, 255, 255, 0.959);
+        appearance: none;
+        height: 35px;
+        width: 100px;
+        border: none;
+        font-weight: 600;
+    }
 }
