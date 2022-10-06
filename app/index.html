@@ -19,13 +19,17 @@
     <form action="post">
       <input class="textInput" type="text" name="search"><input class="submitInput" type="submit" value="Submit">
     </form>
-    <select name="sort" id="sort">
-      <option value="Best Match" selected>Best Match</option>
-      <option value="Name ascending">Name Z-A</option>
-      <option value="Name descending">Name A-Z</option>
-      <option value="Stars descending">Stars descending</option>
-      <option value="Stars Ascending">Stars ascending</option>
-    </select>
+
+    <div class="selectBox">
+      <select name="sort" id="sort">
+        <option value="Best Match" selected>Best Match</option>
+        <option value="Name ascending">Name Z-A</option>
+        <option value="Name descending">Name A-Z</option>
+        <option value="Stars descending">Stars descending</option>
+        <option value="Stars Ascending">Stars ascending</option>
+      </select>
+    </div>
+
 
     <table class="resultTable">
       <tr>

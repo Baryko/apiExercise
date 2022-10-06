@@ -1,0 +1,14 @@
+select {
+    font-size: 11px;
+    text-align: left;
+    height: 20px;
+    border: none;
+    width: 80px;
+    border-bottom: 1px solid black;
+}
+
+.selectBox {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
