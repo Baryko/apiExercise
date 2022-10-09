@@ -11,3 +11,14 @@
     align-items: center;
     flex-direction: column;
 }
+
+//Basic message
+.startMessage {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.562);
+    margin-top: 14px;
+}
+
+.startMessage.inActive {
+    display: none;
+}

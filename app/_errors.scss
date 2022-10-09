@@ -1,0 +1,23 @@
+// No repositories found error
+.errorNoResults {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.562);
+    margin-top: 14px;
+    display: none;
+}
+
+.errorNoResults.active {
+    display: inline;
+}
+
+//Error when results failed
+.error {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.562);
+    margin-top: 14px;
+    display: none;
+}
+
+.error.active {
+    display: inline;
+}
