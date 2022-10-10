@@ -1,3 +1,7 @@
 import './index.scss';
 
-console.log('Boilerplate is working!');
+const dev = function () {
+    console.log('xd')
+};
+
+dev();
