@@ -57,7 +57,7 @@ const getData = (e) => {
 
     const options = {
         headers: {
-            Authorization: 'Bearer ' + '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',
+            Authorization: 'Bearer ' + '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',
             Accept: 'application/vnd.github+json'
         }
     };
@@ -81,20 +81,41 @@ const getData = (e) => {
         })
 };
 
+
 const modifyButton = (e) => {
     if (e.target.value.length > 0) {
         submitInput.disabled = false;
     } else submitInput.disabled = true;
-
 };
 
 
 submitInput.addEventListener('click', (e) => getData(e));
 textInput.addEventListener('keyup', (e) => modifyButton(e));
 
+const allFirstColumnTds = [...document.querySelectorAll('td:nth-child(1)')];
+const allSecondColumnTds = [...document.querySelectorAll('td:nth-child(2)')];
+const allThirdColumnTds = [...document.querySelectorAll('td:nth-child(3)')];
+const allFourthColumnTds = [...document.querySelectorAll('td:nth-child(4)')];
+
 
 
 const handleData = function (data) {
     console.log(data)
-};
+    allFirstColumnTds.forEach((td, index) => td.textContent = data[index].name)
+    allSecondColumnTds.forEach((td, index) => td.textContent = data[index].owner.login)
+    allThirdColumnTds.forEach((td, index) => td.textContent = data[index].stargazers_count)
+    allFourthColumnTds.forEach((td, index) => {
+        td.textContent = converYearFromJson(data[index].created_at)
+    })
+}
 
+
+const converYearFromJson = (isoData) => {
+    const dates = new Date(isoData)
+    const year = dates.getFullYear()
+    const month = dates.toLocaleDateString('en-US', { month: '2-digit' })
+    const day = dates.getDate() < 10 ? '0' + dates.getDate() : dates.getDate()
+    const hours = dates.getHours() < 10 ? '0' + dates.getHours() : dates.getHours()
+    const minutes = dates.getMinutes() < 10 ? '0' + dates.getMinutes() : dates.getMinutes()
+    return `${year}-${month}-${day} ${hours}:${minutes}`
+}
