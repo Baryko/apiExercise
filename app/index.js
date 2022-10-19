@@ -8,6 +8,10 @@ const tableContainer = document.querySelector('.resultsContainer');
 const startMessage = document.querySelector('.startMessage')
 const err = document.querySelector('.error');
 const textInput = document.querySelector('.textInput');
+const allAElements = [...document.querySelectorAll('a')];
+const allIElementsInPagination = [...document.querySelector(".paginationContainer").querySelectorAll('i')];
+
+let page = 1;
 
 
 const showError = () => {
@@ -47,17 +51,29 @@ const hideTable = () => {
     tableContainer.classList.remove('active');
 };
 
+const addBlurToArrows = (page) => {
+    if (page === 1) {
+        allIElementsInPagination[0].style.opacity = "50%"
+    } else allIElementsInPagination[0].style.opacity = "100%"
+
+    if (page === allAElements.length - 2) {
+        allIElementsInPagination[1].style.opacity = "50%"
+    } else allIElementsInPagination[1].style.opacity = "100%"
+}
+
+
 const getData = (e) => {
     e.preventDefault();
+    hideTable();
     hideError();
+    hideBasicMessage();
     showSpinner();
-
+    addBlurToArrows(page);
     const value = getInputValue();
-    const page = '1';
 
     const options = {
         headers: {
-            Authorization: 'Bearer ' + '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',
+            Authorization: 'Bearer ' + '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',
             Accept: 'application/vnd.github+json'
         }
     };
@@ -74,19 +90,20 @@ const getData = (e) => {
         },)
         .catch((error) => {
             hideTable();
+            hideSpinner();
             showError();
             handleData(error);
-            hideSpinner();
             hideBasicMessage()
+
         })
 };
-
 
 const modifyButton = (e) => {
     if (e.target.value.length > 0) {
         submitInput.disabled = false;
     } else submitInput.disabled = true;
 };
+
 
 
 submitInput.addEventListener('click', (e) => getData(e));
@@ -98,9 +115,7 @@ const allThirdColumnTds = [...document.querySelectorAll('td:nth-child(3)')];
 const allFourthColumnTds = [...document.querySelectorAll('td:nth-child(4)')];
 
 
-
 const handleData = function (data) {
-    console.log(data)
     allFirstColumnTds.forEach((td, index) => td.textContent = data[index].name)
     allSecondColumnTds.forEach((td, index) => td.textContent = data[index].owner.login)
     allThirdColumnTds.forEach((td, index) => td.textContent = data[index].stargazers_count)
@@ -119,3 +134,38 @@ const converYearFromJson = (isoData) => {
     const minutes = dates.getMinutes() < 10 ? '0' + dates.getMinutes() : dates.getMinutes()
     return `${year}-${month}-${day} ${hours}:${minutes}`
 }
+
+const changePageOnClick = (e, index) => {
+    e.preventDefault()
+    if (index === 0 || index === allAElements.length - 1) {
+        return;
+    }
+    page = index
+    getData(e);
+    const activeAElement = allAElements.findIndex((a) => a.classList.contains('active'))
+    allAElements[activeAElement].classList.remove('active');
+    e.target.classList.add('active');
+};
+
+const movePage = (e, index) => {
+    if (index === 0) {
+        if (page > 1) {
+            page--
+            getData(e)
+            console.log(page)
+        }
+    } else {
+        if (page < allAElements.length - 2) {
+            page++
+            getData(e)
+            console.log(page)
+        }
+    }
+    const activeAElement = allAElements.findIndex((a) => a.classList.contains('active'));
+    allAElements[activeAElement].classList.remove('active');
+    allAElements[page].classList.add('active');
+}
+
+allAElements.forEach((a, i) => a.addEventListener('click', (e) => changePageOnClick(e, i)));
+allIElementsInPagination.forEach((i, index) => i.addEventListener('click', (e) => movePage(e, index)));
+
